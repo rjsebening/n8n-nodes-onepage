@@ -14,7 +14,7 @@ export class OnepageTrigger implements INodeType {
     icon: 'file:onepage.svg',
     group: ['trigger'],
     version: 1,
-    description: 'Trigger workflows on new OnePage form leads',
+    description: 'Trigger workflows on new OnePage form leads - (powered by agentur-systeme.de)',
     defaults: {
       name: 'OnePage Trigger',
       // @ts-expect-error -- required by n8n linter

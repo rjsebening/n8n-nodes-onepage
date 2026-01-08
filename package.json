@@ -6,7 +6,8 @@
   "homepage": "",
   "keywords": [
     "n8n-community-node-package",
-    "onepage"
+    "onepage",
+    "onepage.io"
   ],
   "author": {
     "name": "Jörg Sebening",
