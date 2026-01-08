@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-onepage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OnePage.io Trigger",
   "license": "MIT",
   "homepage": "",
@@ -16,9 +16,9 @@
     "type": "git",
     "url": "https://github.com/rjsebening/n8n-nodes-onepage.git"
   },
-  	"bugs": {
-		"url": "https://github.com/rjsebening/n8n-nodes-learningsuite/issues"
-	},
+  "bugs": {
+    "url": "https://github.com/rjsebening/n8n-nodes-learningsuite/issues"
+  },
   "main": "index.js",
   "scripts": {
     "build": "npx rimraf dist && tsc && gulp build:icons",
@@ -27,11 +27,11 @@
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix"
   },
-	"files": [
-		"dist",
-		"README.md",
-		"LICENSE"
-	],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": true,
@@ -42,19 +42,19 @@
       "dist/nodes/Onepage/Onepage.node.js"
     ]
   },
-	"devDependencies": {
-		"@typescript-eslint/parser": "~8.32.0",
-		"eslint": "^8.57.0",
-		"eslint-plugin-n8n-nodes-base": "^1.16.3",
-		"gulp": "^5.0.0",
-		"package-json-from-dist": "^1.0.1",
-		"prettier": "^3.5.3",
-		"typescript": "^5.8.2"
-	},
-	"peerDependencies": {
-		"n8n-workflow": "*"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "devDependencies": {
+    "@typescript-eslint/parser": "~8.32.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.3",
+    "gulp": "^5.0.0",
+    "package-json-from-dist": "^1.0.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
