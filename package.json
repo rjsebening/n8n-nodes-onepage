@@ -39,7 +39,7 @@
       "dist/credentials/OnepageApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Onepage/Onepage.node.js"
+      "dist/nodes/Onepage/OnepageTrigger.node.js"
     ]
   },
   "devDependencies": {
