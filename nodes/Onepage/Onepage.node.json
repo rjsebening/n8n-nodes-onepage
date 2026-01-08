@@ -1,0 +1,18 @@
+{
+  "node": "n8n-nodes-onepage",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Marketing & Content"],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://github.com/rjsebening/n8n-nodes-onepage/blob/main/CREDENTIALS.md"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://github.com/rjsebening/n8n-nodes-onepage/blob/main/README.md"
+      }
+    ]
+  }
+}
