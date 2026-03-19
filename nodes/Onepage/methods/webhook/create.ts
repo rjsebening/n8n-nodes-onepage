@@ -9,7 +9,7 @@ export async function create(this: IHookFunctions): Promise<boolean> {
 
   const formLeadListId = this.getNodeParameter('formLeadListId') as string;
 
-  const response = await this.helpers.httpRequest({
+  const response = await this.helpers.httpRequestWithAuthentication.call(this, 'onepageApi', {
     method: 'POST',
     url: 'https://api-eu.onepage.io/api/v1/crm-service/form-lead-list-integrations/webhook',
     headers: {
