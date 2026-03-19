@@ -13,7 +13,7 @@ interface StorageFetchResponse {
 export async function getSites(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
   const session = await onepageLogin(this);
 
-  const response = (await this.helpers.httpRequest({
+  const response = (await this.helpers.httpRequestWithAuthentication.call(this, 'onepageApi', {
     method: 'POST',
     url: 'https://api-eu.onepage.io/api/v1/site-service/rpc?_storage.fetch',
     headers: {
