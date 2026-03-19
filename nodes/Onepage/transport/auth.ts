@@ -12,7 +12,7 @@ export async function onepageLogin(ctx: OnepageContext): Promise<OnepageSession>
   const email = credentials.email as string;
   const password = credentials.password as string;
 
-  const response = await ctx.helpers.httpRequest({
+  const response = await ctx.helpers.httpRequestWithAuthentication.call(ctx, 'onepageApi', {
     method: 'POST',
     url: 'https://auth.onepage.io/login',
     body: { email, password },
