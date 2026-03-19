@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "description": "OnePage.io Trigger",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/rjsebening/n8n-nodes-onepage",
   "keywords": [
     "n8n-community-node-package",
     "onepage",
@@ -18,7 +18,7 @@
     "url": "https://github.com/rjsebening/n8n-nodes-onepage.git"
   },
   "bugs": {
-    "url": "https://github.com/rjsebening/n8n-nodes-learningsuite/issues"
+    "url": "https://github.com/rjsebening/n8n-nodes-onepage/issues"
   },
   "main": "index.js",
   "scripts": {
