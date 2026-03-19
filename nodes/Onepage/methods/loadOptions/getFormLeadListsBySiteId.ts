@@ -12,9 +12,14 @@ interface LeadListResponse {
 
 export async function getFormLeadListsBySiteId(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
   const siteId = this.getCurrentNodeParameter('siteId') as string;
+
+  if (!siteId) {
+    return [{ name: 'Choose a Project (Site) First', value: '' }];
+  }
+
   const session = await onepageLogin(this);
 
-  const response = (await this.helpers.httpRequest({
+  const response = (await this.helpers.httpRequestWithAuthentication.call(this, 'onepageApi', {
     method: 'POST',
     url: 'https://api-eu.onepage.io/api/v1/crm-service/rpc?_lead-list.getBySite',
     headers: {
