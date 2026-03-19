@@ -8,7 +8,7 @@ export async function deleteWebhook(this: IHookFunctions): Promise<boolean> {
 
   const formLeadListId = this.getNodeParameter('formLeadListId') as string;
 
-  const webhooks = await this.helpers.httpRequest({
+  const webhooks = await this.helpers.httpRequestWithAuthentication.call(this, 'onepageApi', {
     method: 'GET',
     url: 'https://api-eu.onepage.io/api/v1/crm-service/form-lead-list-integrations',
     headers: { Cookie: session.cookieHeader },
@@ -25,7 +25,7 @@ export async function deleteWebhook(this: IHookFunctions): Promise<boolean> {
     return true;
   }
 
-  await this.helpers.httpRequest({
+  await this.helpers.httpRequestWithAuthentication.call(this, 'onepageApi', {
     method: 'DELETE',
     url: `https://api-eu.onepage.io/api/v1/crm-service/form-lead-list-integrations/${match._id}`,
     headers: { Cookie: session.cookieHeader },
