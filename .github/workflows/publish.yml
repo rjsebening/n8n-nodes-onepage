@@ -47,6 +47,6 @@ jobs:
           cp README.md LICENSE package.json "${publish_dir}/"
 
           npm pkg set --prefix "${publish_dir}" name="@rjsebening/n8n-nodes-onepage"
-          npm publish "${publish_dir}" --provenance --access public
+          npm publish "${publish_dir}" --provenance --access public --ignore-scripts
         env:
           RELEASE_MODE: 'true'
