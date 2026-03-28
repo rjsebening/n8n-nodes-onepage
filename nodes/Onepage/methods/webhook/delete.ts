@@ -32,5 +32,8 @@ export async function deleteWebhook(this: IHookFunctions): Promise<boolean> {
     json: true,
   });
 
+  const staticData = this.getWorkflowStaticData('node');
+  staticData.webhookId = undefined;
+
   return true;
 }

@@ -1,4 +1,4 @@
-import { INodeType, INodeTypeDescription, IWebhookFunctions, IWebhookResponseData } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, IWebhookFunctions, IWebhookResponseData, NodeConnectionTypes } from 'n8n-workflow';
 
 import { getSites } from './methods/loadOptions/getSites';
 import { getFormLeadListsBySiteId } from './methods/loadOptions/getFormLeadListsBySiteId';
@@ -14,14 +14,15 @@ export class OnepageTrigger implements INodeType {
     icon: 'file:onepage.svg',
     group: ['trigger'],
     version: 1,
-    description: 'Trigger workflows on new OnePage form leads - (powered by agentur-systeme.de)',
+    subtitle: 'OnePage form lead trigger',
+    description: 'Trigger workflows on new OnePage form leads',
     defaults: {
       name: 'OnePage Trigger',
       // @ts-expect-error -- required by n8n linter
-      description: 'Interact with OnePage API (powered by agentur-systeme.de)',
+      description: 'Interact with OnePage API',
     },
     inputs: [],
-    outputs: ['main'],
+    outputs: [NodeConnectionTypes.Main],
     credentials: [
       {
         name: 'onepageApi',
