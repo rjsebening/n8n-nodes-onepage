@@ -9,7 +9,7 @@ import type {
 export class OnepageApi implements ICredentialType {
   name = 'onepageApi';
   displayName = 'OnePage API';
-  icon: Icon = 'file:onepage.svg';
+  icon: Icon = { light: 'file:onepage.light.svg', dark: 'file:onepage.dark.svg' };
   documentationUrl = 'https://github.com/rjsebening/n8n-nodes-onepage/blob/main/CREDENTIALS.md';
 
   authenticate: IAuthenticateGeneric = {

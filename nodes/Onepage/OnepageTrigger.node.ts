@@ -1,4 +1,11 @@
-import { INodeType, INodeTypeDescription, IWebhookFunctions, IWebhookResponseData, NodeConnectionTypes } from 'n8n-workflow';
+import {
+  IHookFunctions,
+  INodeType,
+  INodeTypeDescription,
+  IWebhookFunctions,
+  IWebhookResponseData,
+  NodeConnectionTypes,
+} from 'n8n-workflow';
 
 import { getSites } from './methods/loadOptions/getSites';
 import { getFormLeadListsBySiteId } from './methods/loadOptions/getFormLeadListsBySiteId';
@@ -11,7 +18,7 @@ export class OnepageTrigger implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'OnePage Trigger',
     name: 'onepageTrigger',
-    icon: 'file:onepage.svg',
+    icon: { light: 'file:onepage.light.svg', dark: 'file:onepage.dark.svg' },
     group: ['trigger'],
     version: 1,
     subtitle: 'OnePage form lead trigger',
@@ -76,11 +83,20 @@ export class OnepageTrigger implements INodeType {
     },
   };
 
+  // The lifecycle logic lives in ./methods/webhook/*. It is delegated to from
+  // inline methods because the community-node linter only recognises lifecycle
+  // methods declared as function expressions, not shorthand imported references.
   webhookMethods = {
     default: {
-      checkExists,
-      create,
-      delete: deleteWebhook,
+      async checkExists(this: IHookFunctions): Promise<boolean> {
+        return await checkExists.call(this);
+      },
+      async create(this: IHookFunctions): Promise<boolean> {
+        return await create.call(this);
+      },
+      async delete(this: IHookFunctions): Promise<boolean> {
+        return await deleteWebhook.call(this);
+      },
     },
   };
 
