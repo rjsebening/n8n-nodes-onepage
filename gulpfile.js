@@ -1,16 +1,27 @@
 const path = require('path');
-const { task, src, dest } = require('gulp');
+const { task, src, dest, parallel } = require('gulp');
 
-task('build:icons', copyIcons);
+task('build:assets', parallel(copyNodeIcons, copyNodeCodex, copyCredentialIcons));
 
-function copyIcons() {
-	const nodeSource = path.resolve('nodes', '**', '*.{png,svg}');
-	const nodeDestination = path.resolve('dist', 'nodes');
+function copyNodeIcons() {
+	const source = path.resolve('nodes', '**', '*.{png,svg}');
+	const destination = path.resolve('dist', 'nodes');
 
-	src(nodeSource).pipe(dest(nodeDestination));
+	return src(source).pipe(dest(destination));
+}
 
-	const credSource = path.resolve('credentials', '**', '*.{png,svg}');
-	const credDestination = path.resolve('dist', 'credentials');
+// n8n reads the codex metadata (categories, documentation links) from the `<Node>.node.json`
+// next to the compiled node. tsc never emits JSON, so it has to be copied like the icons.
+function copyNodeCodex() {
+	const source = path.resolve('nodes', '**', '*.node.json');
+	const destination = path.resolve('dist', 'nodes');
 
-	return src(credSource).pipe(dest(credDestination));
+	return src(source).pipe(dest(destination));
+}
+
+function copyCredentialIcons() {
+	const source = path.resolve('credentials', '**', '*.{png,svg}');
+	const destination = path.resolve('dist', 'credentials');
+
+	return src(source).pipe(dest(destination));
 }

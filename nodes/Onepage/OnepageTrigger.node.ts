@@ -22,11 +22,9 @@ export class OnepageTrigger implements INodeType {
     group: ['trigger'],
     version: 1,
     subtitle: 'OnePage form lead trigger',
-    description: 'Trigger workflows on new OnePage form leads',
+    description: 'Trigger workflows on new OnePage form leads (powered by joergsebening.de)',
     defaults: {
       name: 'OnePage Trigger',
-      // @ts-expect-error -- required by n8n linter
-      description: 'Interact with OnePage API',
     },
     inputs: [],
     outputs: [NodeConnectionTypes.Main],
@@ -72,8 +70,6 @@ export class OnepageTrigger implements INodeType {
           'Select the form lead list. The workflow triggers whenever a new lead is added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
       },
     ],
-    // @ts-expect-error -- required by n8n linter
-    usableAsTool: false,
   };
 
   methods = {

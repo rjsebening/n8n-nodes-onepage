@@ -7,6 +7,10 @@
 Eine schlanke n8n Community Node zur **Echtzeit-Integration von OnePage Leads** über einen Trigger.
 Ideal für alle, die neue Leads **sofort automatisiert weiterverarbeiten** wollen – ohne Polling, ohne Umwege.
 
+> **Du suchst die Onepage MCP Node (AI-Agent-Tool)?** Sie ist mit **v0.3.0** in ein eigenes Paket
+> umgezogen: [n8n-nodes-onepage-mcp](https://github.com/rjsebening/n8n-nodes-onepage-mcp)
+> (`n8n-nodes-onepage-mcp` / `@rjsebening/n8n-nodes-onepage-mcp`).
+>
 ---
 
 ## Was ist n8n?
