@@ -22,7 +22,7 @@ export class OnepageTrigger implements INodeType {
     group: ['trigger'],
     version: 1,
     subtitle: 'OnePage form lead trigger',
-    description: 'Trigger workflows on new OnePage form leads (powered by joergsebening.de)',
+    description: 'Trigger workflows on new OnePage form leads',
     defaults: {
       name: 'OnePage Trigger',
     },
